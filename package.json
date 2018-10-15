@@ -20,6 +20,7 @@
     "react-navigation": "^2.16.0"
   },
   "devDependencies": {
+    "babel-plugin-inline-dotenv": "^1.1.2",
     "jest-expo": "30.0.0"
   }
 }
