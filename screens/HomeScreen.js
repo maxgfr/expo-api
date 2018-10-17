@@ -27,9 +27,9 @@ export default class HomeScreen extends React.Component {
     }
   }
 
-  onClickTwitch() {
+  async onClickTwitch() {
       let twitch = Twitch.getInstance();
-      twitch.getInfo();
+      twitch.getUserAccessToken();
   }
 
   render() {
