@@ -24,7 +24,9 @@ export default class YoutubeScreen extends React.Component {
 
   async onClickYoutube() {
       let yt = Youtube.getInstance();
-      yt.loginWithGoogle();
+      await yt.loginWithGoogle(function(result) {
+        console.log(result);
+      });
   }
 
   render() {
