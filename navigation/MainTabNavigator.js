@@ -1,60 +1,55 @@
 import React from 'react';
-import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TwitchScreen from '../screens/TwitchScreen';
+import YoutubeScreen from '../screens/YoutubeScreen';
+import InstagramScreen from '../screens/InstagramScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const TwitchStack = createStackNavigator({
+  Twitch: TwitchScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+TwitchStack.navigationOptions = {
+  tabBarLabel: 'Twitch',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+      name='logo-twitch'
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const YoutubeStack = createStackNavigator({
+  Youtube: YoutubeScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+YoutubeStack.navigationOptions = {
+  tabBarLabel: 'Youtube',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+      name='logo-youtube'
     />
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const InstagramStack = createStackNavigator({
+  Instagram: InstagramScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+InstagramStack.navigationOptions = {
+  tabBarLabel: 'Instagram',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
+      name='logo-instagram'
     />
   ),
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  TwitchStack,
+  YoutubeStack,
+  InstagramStack,
 });
