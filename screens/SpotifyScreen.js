@@ -8,11 +8,11 @@ import {
   Button
 } from 'react-native';
 
-import Instagram from '../lib/instagram';
+import Spotify from '../lib/spotify';
 
-export default class InstagramScreen extends React.Component {
+export default class SpotifyScreen extends React.Component {
   static navigationOptions = {
-    title: 'Instagram',
+    title: 'Spotify',
   };
 
   constructor(props) {
@@ -22,9 +22,9 @@ export default class InstagramScreen extends React.Component {
     }
   }
 
-  async onClickInstagram() {
-      let insta = Instagram.getInstance();
-      await insta.getUserAccessToken(function(result) {
+  async onClickSpotify() {
+      let spotify = Spotify.getInstance();
+      await spotify.getUserAccessToken(function(result) {
         console.log(result);
       });
   }
@@ -36,7 +36,7 @@ export default class InstagramScreen extends React.Component {
 
 
             <View style={styles.getStartedContainer}>
-                  <Button title="Sign in with Instagram" onPress={() => this.onClickInstagram()} />
+                  <Button title="Sign in with Spotify" onPress={() => this.onClickSpotify()} />
             </View>
 
 

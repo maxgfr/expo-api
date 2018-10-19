@@ -5,6 +5,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import TwitchScreen from '../screens/TwitchScreen';
 import YoutubeScreen from '../screens/YoutubeScreen';
 import InstagramScreen from '../screens/InstagramScreen';
+import SpotifyScreen from '../screens/SpotifyScreen';
 
 const TwitchStack = createStackNavigator({
   Twitch: TwitchScreen,
@@ -48,8 +49,23 @@ InstagramStack.navigationOptions = {
   ),
 };
 
+const SpotifyStack = createStackNavigator({
+  Spotify: SpotifyScreen,
+});
+
+SpotifyStack.navigationOptions = {
+  tabBarLabel: 'Spotify',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name='ios-musical-notes'
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   TwitchStack,
   YoutubeStack,
   InstagramStack,
+  SpotifyStack
 });
