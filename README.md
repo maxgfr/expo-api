@@ -12,7 +12,7 @@ Application which lets user to connect to
 
 ```
     git clone https://github.com/maxgfr/expo-api.git
-    cd firebase-native
+    cd expo-api
     mv .env.example .env  # set your own credentials
     npm install
     expo start
