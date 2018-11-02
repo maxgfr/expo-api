@@ -7,6 +7,7 @@ import YoutubeScreen from '../screens/YoutubeScreen';
 import InstagramScreen from '../screens/InstagramScreen';
 import SpotifyScreen from '../screens/SpotifyScreen';
 import PinterestScreen from '../screens/PinterestScreen';
+import MediumScreen from '../screens/MediumScreen';
 
 const TwitchStack = createStackNavigator({
   Twitch: TwitchScreen,
@@ -32,6 +33,20 @@ YoutubeStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name='logo-youtube'
+    />
+  ),
+};
+
+const MediumStack = createStackNavigator({
+  Medium: MediumScreen,
+});
+
+MediumStack.navigationOptions = {
+  tabBarLabel: 'Medium',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name='ios-book'
     />
   ),
 };
@@ -83,5 +98,6 @@ export default createBottomTabNavigator({
   YoutubeStack,
   InstagramStack,
   SpotifyStack,
-  PinterestStack
+  PinterestStack,
+  MediumStack
 });
